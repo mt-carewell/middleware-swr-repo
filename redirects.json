@@ -1,0 +1,7 @@
+[
+  {
+    "source": "/redirect/me/please",
+    "destination": "/",
+    "permanent": true
+  }
+]
