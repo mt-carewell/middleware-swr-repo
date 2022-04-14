@@ -4,7 +4,7 @@ const queryParamAllowList = new Set(['a', 'b', 'c'])
 
 const middleware: NextMiddleware = (req: NextRequest) => {
     let url = req.nextUrl.clone()
-    if (url.pathname === '/') {
+    if (url.pathname === '/' || url.pathname.startsWith('/test')) {
         console.log('[middleware] incoming request', url)
         const queryParams = Array.from(url.searchParams.keys())
 
