@@ -5,7 +5,7 @@ const queryParamAllowList = new Set(['a', 'b', 'c'])
 const middleware: NextMiddleware = (req: NextRequest) => {
     let url = req.nextUrl.clone()
     if (url.pathname === '/' || url.pathname.startsWith('/test')) {
-        console.log('[middleware] incoming request', url)
+        console.log('[middleware] incoming request', req.nextUrl.toString())
         const queryParams = Array.from(url.searchParams.keys())
 
         queryParams.forEach((k) => {
@@ -14,7 +14,7 @@ const middleware: NextMiddleware = (req: NextRequest) => {
             }
         })
 
-        console.log('[middleware] rewriting request', url)
+        console.log('[middleware] rewriting request', url.toString())
 
         return NextResponse.rewrite(url)
     }
