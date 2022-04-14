@@ -7,7 +7,7 @@ const nextConfig = {
       [
         {
           source: "/redirect/me/please/",
-          destination: "/",
+          destination: "/test/",
           permanent: true
         }
       ]
